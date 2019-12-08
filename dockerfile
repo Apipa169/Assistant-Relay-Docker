@@ -14,4 +14,7 @@ RUN wget https://github.com/greghesp/assistant-relay/releases/download/v3.1.3/re
 && rm release.zip \
 && npm i
 
-CMD [ "npm run start" ]
+WORKDIR /
+RUN wget https://raw.githubusercontent.com/Apipa169/Assistant-Relay-Docker/master/run.sh
+RUN chmod a+x /run.sh
+CMD [ "/run.sh" ]
