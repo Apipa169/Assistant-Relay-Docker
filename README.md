@@ -8,6 +8,12 @@
 # Assistant Relay Docker
 Assistant Relay in Docker. See https://github.com/greghesp/assistant-relay to see how it works and for the release notes.
 
+Create a file in the volume called "config.json" before starting the container:
+
+```json
+{}
+```
+
 
 #### Docker Run
 ```bash
@@ -31,11 +37,7 @@ services:
         image: 'apipa169/assistant-relay:latest'
 ```
 
-Create a file in the volume called "config.json" before starting the container:
 
-```json
-{}
-```
 
 ## Home Assistant
 Assistant Relay is a great addition to Home Assistant. For the Hass.io add-on see: https://github.com/Apipa169/Assistant-Relay-for-Hassio
