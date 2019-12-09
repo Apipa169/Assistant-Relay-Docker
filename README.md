@@ -9,12 +9,26 @@
 Assistant Relay in Docker. See https://github.com/greghesp/assistant-relay to see how it works and for the release notes.
 
 
+#### Docker Run
 ```bash
 docker run -d --name assistant_relay \
 -p 3000:3000 \
 -v /path/to/volume/config.json:/assistant_relay/bin/config.json:rw \
 -v /path/to/volume/audio-responses:/assistant_relay/bin/audio-responses:rw \
 apipa169/assistant-relay:latest
+```
+#### Docker Compose
+```yaml
+version: '3.3'
+services:
+    assistant-relay:
+        container_name: assistant_relay
+        ports:
+            - '3000:3000'
+        volumes:
+            - '/path/to/volume/config.json:/assistant_relay/bin/config.json:rw'
+            - '/path/to/volume/audio-responses:/assistant_relay/bin/audio-responses:rw'
+        image: 'apipa169/assistant-relay:latest'
 ```
 
 Create a file in the volume called "config.json" before starting the container:
