@@ -5,7 +5,7 @@
 ![Supports i386 Architecture][i386-shield]
 ![Maintained][maintained-shield]
 
-# Assistant-Relay-Docker
+# Assistant Relay Docker
 Assistant Relay in Docker. See https://github.com/greghesp/assistant-relay to see how it works and for the release notes.
 
 
