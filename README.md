@@ -8,6 +8,11 @@
 # Assistant Relay Docker
 Assistant Relay in Docker. See https://github.com/greghesp/assistant-relay to see how it works and for the release notes.
 
+The image with the tag 'latest' is identical to the newest (non beta) version.
+
+
+# Installation
+
 Create a file in the volume called "config.json" before starting the container:
 
 ```json
