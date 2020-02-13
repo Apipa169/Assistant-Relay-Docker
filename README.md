@@ -28,6 +28,8 @@ docker run -d --name assistant_relay \
 -v /path/to/volume/audio-responses:/assistant_relay/bin/audio-responses:rw \
 apipa169/assistant-relay:latest
 ```
+
+
 #### Docker Compose
 ```yaml
 version: '3.3'
@@ -44,10 +46,28 @@ services:
 
 
 
+## ARM / RaspberryPi
+
+Currently ARM is not supported, therefore you can not run this on a RaspberryPi. But there is a workaround by using the Hass.io addon image, without running Hass.io (or Home Assistant).
+
+
+#### Docker Run AMRv7
+```bash
+docker run -d --name assistant_relay \
+-p 3000:3000 \
+-v /path/to/volume/config.json:/data/config.json:rw \
+-v /path/to/volume/audio-responses:/data/audio-responses:rw \
+apipa169/armv7-hassio-assistant_relay:latest
+```
+
+
+
+
 ## Home Assistant
 Assistant Relay is a great addition to Home Assistant. For the Hass.io add-on see: https://github.com/Apipa169/Assistant-Relay-for-Hassio
 
 The commands described on the add-on page will also work if you are not using the add-on.
+
 
 
 
