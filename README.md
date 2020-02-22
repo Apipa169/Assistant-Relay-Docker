@@ -8,7 +8,7 @@
 # Assistant Relay Docker
 Assistant Relay in Docker. See https://github.com/greghesp/assistant-relay to see how it works and for the release notes.
 
-The image with the tag 'latest' is identical to the newest (non beta) version. The newest beta release is tagged with "beta".
+The image with the tag 'latest' is identical to the newest (non beta) version. The newest beta release is tagged as "beta" and it's release number.
 
 
 # Installation
