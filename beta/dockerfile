@@ -3,7 +3,8 @@ FROM node:lts-alpine
 
 ENV LANG C.UTF-8
 
-RUN apk add python3
+RUN apk add python3 \
+&& pip3 install catt
 
 RUN mkdir /assistant_relay \
 && npm i pm2 -g
