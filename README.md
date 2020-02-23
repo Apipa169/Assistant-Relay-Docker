@@ -16,9 +16,11 @@ The image with the tag 'latest' is identical to the newest (non beta) version. T
 Create a file in the volume called "config.json" before starting the container:
 
 ```json
-{}
+{
+    "port":3000
+}
 ```
-
+Change the number to the port you want to use.
 
 #### Docker Run
 ```bash
@@ -28,7 +30,6 @@ docker run -d --name assistant_relay \
 -v /path/to/volume/audio-responses:/assistant_relay/bin/audio-responses:rw \
 apipa169/assistant-relay:latest
 ```
-
 
 #### Docker Compose
 ```yaml
@@ -44,7 +45,18 @@ services:
         image: 'apipa169/assistant-relay:latest'
 ```
 
+## Beta
+If you want to test the beta release you need to run the container in network mode "host" to support the Cast functionality.
 
+The port needs to be defined in the config.json.
+
+```bash
+docker run -d --name assistant_relay \
+--network host \
+-v /path/to/volume/config.json:/assistant_relay/bin/config.json:rw \
+-v /path/to/volume/audio-responses:/assistant_relay/bin/audio-responses:rw \
+apipa169/assistant-relay:beta
+```
 
 ## ARM / RaspberryPi
 
@@ -59,9 +71,6 @@ docker run -d --name assistant_relay \
 -v /path/to/volume/audio-responses:/data/audio-responses:rw \
 apipa169/armv7-hassio-assistant_relay:latest
 ```
-
-
-
 
 ## Home Assistant
 Assistant Relay is a great addition to Home Assistant. For the Hass.io add-on see: https://github.com/Apipa169/Assistant-Relay-for-Hassio
