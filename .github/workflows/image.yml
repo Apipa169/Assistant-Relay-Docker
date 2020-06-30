@@ -21,4 +21,4 @@ jobs:
         run: |
           docker buildx build --push \
             --tag apipa169/assistant-relay-docker:test \
-            --platform linux/amd64,linux/arm/v7 .
+            --platform linux/amd64 .
