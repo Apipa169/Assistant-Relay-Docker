@@ -2,6 +2,7 @@ ARG BUILD_FROM
 FROM node
 
 ENV LANG C.UTF-8
+ENV BUILD-VERSION=$BUILD_VERSION
 
 
 RUN mkdir /assistant_relay \
