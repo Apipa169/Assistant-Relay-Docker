@@ -21,8 +21,10 @@ jobs:
       - name: login to docker hub
         run: echo "${{ secrets.DOCKER_HUB_PASS }}" | docker login -u "${{ secrets.DOCKER_HUB_USER }}" --password-stdin
       - name: build the image
+        env:
+          TAG: {ref}
         run: |
           docker buildx build --push \
             --tag apipa169/assistant-relay-docker:latest \
-            --tag apipa169/assistant-relay-docker:${{ ref }} \
+            --tag apipa169/assistant-relay-docker:${env:TAG} \
             --platform linux/amd64,linux/arm/v7,linux/arm64 .
