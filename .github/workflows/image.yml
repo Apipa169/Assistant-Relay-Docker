@@ -2,7 +2,10 @@ name: build image
 
 on:
   push:
-    branches: github_actions
+    branches:
+      - master
+  release:
+    types: [published, created, edited]
 
 jobs:
   build:
@@ -20,5 +23,5 @@ jobs:
       - name: build the image
         run: |
           docker buildx build --push \
-            --tag apipa169/assistant-relay-docker:test \
+            --tag apipa169/assistant-relay-docker:{ref} \
             --platform linux/amd64,linux/arm/v7,linux/arm64 .
