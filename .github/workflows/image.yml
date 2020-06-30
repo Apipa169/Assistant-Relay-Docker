@@ -1,6 +1,9 @@
 name: build image
 
 on:
+  push:
+    branches: 
+      - master
   release:
     types: [created, edited]
 
