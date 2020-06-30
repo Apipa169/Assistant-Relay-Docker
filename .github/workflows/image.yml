@@ -15,11 +15,6 @@ jobs:
         uses: crazy-max/ghaction-docker-buildx@v1
         with:
           version: latest
-      - name: build the image
-      run: |
-        docker buildx build \
-          --tag apipa169/assistant-relay-docker:test \
-          --platform linux/amd64,linux/arm/v7,linux/arm64 .
       - name: login to docker hub
         run: echo "${{ secrets.DOCKER_HUB_PASS }}" | docker login -u "${{ secrets.DOCKER_HUB_USER }}" --password-stdin
       - name: build the image
