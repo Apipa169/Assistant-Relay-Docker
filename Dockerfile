@@ -17,5 +17,4 @@ RUN wget https://github.com/greghesp/assistant-relay/releases/download/v3.2.0/re
 
 WORKDIR /
 COPY . run.sh
-RUN ["chmod", "+x", "run.sh"]
-CMD [ "/run.sh" ]
+ENTRYPOINT ["sh", "/run.sh"]
