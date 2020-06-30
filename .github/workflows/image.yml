@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
       - name: install buildx
         id: buildx
         uses: crazy-max/ghaction-docker-buildx@v1
@@ -21,10 +24,8 @@ jobs:
       - name: login to docker hub
         run: echo "${{ secrets.DOCKER_HUB_PASS }}" | docker login -u "${{ secrets.DOCKER_HUB_USER }}" --password-stdin
       - name: build the image
-        env:
-          TAG: ${{ref}}
         run: |
           docker buildx build --push \
             --tag apipa169/assistant-relay-docker:latest \
-            --tag apipa169/assistant-relay-docker:${env:TAG} \
+            --tag apipa169/assistant-relay-docker:${{ steps.get_version.outputs.VERSION }} \
             --platform linux/amd64,linux/arm/v7,linux/arm64 .
