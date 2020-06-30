@@ -16,6 +16,8 @@ jobs:
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+      - name: test
+        run: echo ${{ steps.get_version.outputs.VERSION }} 
       - name: install buildx
         id: buildx
         uses: crazy-max/ghaction-docker-buildx@v1
