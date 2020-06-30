@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM node:lts-alpine
+FROM node
 
 ENV LANG C.UTF-8
 
@@ -15,6 +15,6 @@ RUN wget https://github.com/greghesp/assistant-relay/releases/download/v3.2.0/re
 && npm i
 
 WORKDIR /
-RUN wget https://raw.githubusercontent.com/Apipa169/Assistant-Relay-Docker/master/run.sh
+COPY . run.sh
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
