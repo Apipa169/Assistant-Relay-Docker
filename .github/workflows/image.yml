@@ -1,9 +1,6 @@
 name: build image
 
 on:
-  push:
-    branches:
-      - master
   release:
     types: [published, created, edited]
 
@@ -16,7 +13,7 @@ jobs:
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
-      - name: test
+      - name: Show version
         run: echo ${{ steps.get_version.outputs.VERSION }} 
       - name: install buildx
         id: buildx
@@ -30,4 +27,5 @@ jobs:
           docker buildx build --push \
             --tag apipa169/assistant-relay-docker:latest \
             --tag apipa169/assistant-relay-docker:${{ steps.get_version.outputs.VERSION }} \
+            --build-arg VERSION=${{ steps.get_version.outputs.VERSION }}
             --platform linux/amd64,linux/arm/v7,linux/arm64 .
