@@ -23,5 +23,6 @@ jobs:
       - name: build the image
         run: |
           docker buildx build --push \
-            --tag apipa169/assistant-relay-docker:{ref} \
+            --tag apipa169/assistant-relay-docker:test1 \
+            --tag apipa169/assistant-relay-docker:test2 \
             --platform linux/amd64,linux/arm/v7,linux/arm64 .
