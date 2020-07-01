@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM python:3.7.8-buster
+FROM python:3.7.8
 
 ENV LANG C.UTF-8
 ENV VERSION=$VERSION
