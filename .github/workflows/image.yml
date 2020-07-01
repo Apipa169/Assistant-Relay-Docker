@@ -1,11 +1,11 @@
 name: build image
 
 on:
+  create:
+    tags: 
   push:
     branches:
       - dev
-  release:
-    types: [created, edited]
 
 jobs:
   buildx:
