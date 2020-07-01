@@ -23,7 +23,7 @@ jobs:
           VERSION=edge
 
           if [[ $GITHUB_REF == refs/tags/* ]]; then
-            VERSION=${GITHUB_REF#refs/tags/v}
+            VERSION=${GITHUB_REF#v}
           fi
           if [ "${{ github.event_name }}" = "schedule" ]; then
             VERSION=nightly
