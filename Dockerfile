@@ -5,9 +5,7 @@ ENV LANG C.UTF-8
 ENV VERSION=$VERSION
 ENV BUILD_DATE=$BUILD_DATE
 
-RUN apt-get update
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-RUN python get-pip.py
+RUN apt install python3-pip
 RUN pip install catt
 
 RUN mkdir /assistant_relay \
