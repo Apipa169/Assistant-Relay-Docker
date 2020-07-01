@@ -8,7 +8,7 @@ ENV BUILD_DATE=$BUILD_DATE
 RUN apt-get update
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python get-pip.py
-RUN pip3 install catt
+RUN pip install catt
 
 RUN mkdir /assistant_relay \
 && npm i pm2 -g
