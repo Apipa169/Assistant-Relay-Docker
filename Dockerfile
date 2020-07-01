@@ -2,8 +2,8 @@ ARG BUILD_FROM
 FROM node
 
 ENV LANG C.UTF-8
-ENV BUILD-VERSION=$BUILD_VERSION
-
+ENV VERSION=$VERSION
+ENV BUILD_DATE=$BUILD_DATE
 
 RUN mkdir /assistant_relay \
 && npm i pm2 -g
@@ -17,5 +17,5 @@ RUN wget https://github.com/greghesp/assistant-relay/releases/download/v3.2.0/re
 
 WORKDIR /
 COPY . run.sh
-RUN chmod 755 /run.sh
+RUN sudo chmod a+x /run.sh
 CMD [ "/run.sh" ]
