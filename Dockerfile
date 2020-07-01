@@ -5,6 +5,10 @@ ENV LANG C.UTF-8
 ENV VERSION=$VERSION
 ENV BUILD_DATE=$BUILD_DATE
 
+RUN apt-get update \
+&& apt-get install python3.6 \
+&& pip3 install catt
+
 RUN mkdir /assistant_relay \
 && npm i pm2 -g
 
