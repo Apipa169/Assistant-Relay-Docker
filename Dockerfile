@@ -6,7 +6,7 @@ ENV VERSION=$VERSION
 ENV BUILD_DATE=$BUILD_DATE
 
 RUN apt-get update \
-&& apt-get install python3.6 \
+&& apt-get install python3-pip \
 && pip3 install catt
 
 RUN mkdir /assistant_relay \
