@@ -10,7 +10,7 @@ RUN mkdir /assistant_relay \
 
 WORKDIR /assistant_relay
 
-RUN wget https://github.com/greghesp/assistant-relay/releases/download/v3.2.0/release.zip \
+RUN wget https://github.com/greghesp/assistant-relay/releases/download/v3.3.2b/release.zip \
 && unzip release.zip \
 && rm release.zip \
 && npm i
