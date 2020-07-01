@@ -6,7 +6,8 @@ ENV VERSION=$VERSION
 ENV BUILD_DATE=$BUILD_DATE
 
 RUN apt-get update
-RUN apt-get install python3
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+RUN python get-pip.py
 RUN pip3 install catt
 
 RUN mkdir /assistant_relay \
