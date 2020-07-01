@@ -5,9 +5,9 @@ ENV LANG C.UTF-8
 ENV VERSION=$VERSION
 ENV BUILD_DATE=$BUILD_DATE
 
-RUN apt-get update \
-&& apt-get install python3-pip \
-&& pip3 install catt
+RUN apt-get update
+RUN apt-get install python3-pip
+RUN pip3 install catt
 
 RUN mkdir /assistant_relay \
 && npm i pm2 -g
