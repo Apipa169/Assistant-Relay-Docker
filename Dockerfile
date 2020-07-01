@@ -16,6 +16,6 @@ RUN wget https://github.com/greghesp/assistant-relay/releases/download/v3.2.0/re
 && npm i
 
 WORKDIR /
-COPY . run.sh
-RUN sudo chmod a+x /run.sh
+RUN wget https://raw.githubusercontent.com/Apipa169/Assistant-Relay-Docker/master/run.sh
+RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
