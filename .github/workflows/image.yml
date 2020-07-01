@@ -18,7 +18,7 @@ jobs:
         name: Prepare
         id: prepare
         run: |
-          DOCKER_IMAGE=apipa169/assistant-relay-docker
+          DOCKER_IMAGE=apipa169/assistant-relay
           DOCKER_PLATFORMS=linux/amd64,linux/arm/v7,linux/arm64
           VERSION=edge
 
