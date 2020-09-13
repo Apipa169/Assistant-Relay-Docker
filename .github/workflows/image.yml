@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - dev
+  repository_dispatch:
+    types: [ v4-beta ]
 
 jobs:
   buildx:
