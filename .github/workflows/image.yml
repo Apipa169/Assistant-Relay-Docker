@@ -1,9 +1,9 @@
 name: build image
 
 on:
-  create:
-    tags: 
   push:
+    tags:
+    - '*'
     branches:
       - dev
 
