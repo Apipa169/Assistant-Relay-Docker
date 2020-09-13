@@ -1,7 +1,9 @@
 ARG BUILD_FROM
-FROM node:lts-alpine
+FROM node
 
 ENV LANG C.UTF-8
+ENV VERSION=$VERSION
+ENV BUILD_DATE=$BUILD_DATE
 
 RUN apk add python3 \
 && pip3 install catt
