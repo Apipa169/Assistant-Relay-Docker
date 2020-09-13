@@ -1,2 +1,2 @@
-cd /assistant_relay
-npm run start
+cd /assistant-relay
+npm run dev
