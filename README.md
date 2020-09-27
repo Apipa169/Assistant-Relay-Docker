@@ -77,6 +77,7 @@ Assistant Relay is a great addition to Home Assistant. For the Hass.io add-on se
 
 The commands described on the add-on page will also work if you are not using the add-on.
 
+
 [aarch64-shield]: https://img.shields.io/badge/aarch64-no-red.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
