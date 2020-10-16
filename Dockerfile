@@ -6,6 +6,7 @@ ENV VERSION=$VERSION
 ENV BUILD_DATE=$BUILD_DATE
 
 RUN mkdir /assistant_relay \
+&& touch /assistant_relay/bin/config.json \
 && npm i pm2 -g
 
 WORKDIR /assistant_relay
