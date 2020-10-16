@@ -5,7 +5,7 @@ ENV LANG C.UTF-8
 ENV VERSION=$VERSION
 ENV BUILD_DATE=$BUILD_DATE
 
-RUN mkdir /assistant_relay \
+RUN mkdir -p /assistant_relay/bin \
 && touch /assistant_relay/bin/config.json \
 && npm i pm2 -g
 
