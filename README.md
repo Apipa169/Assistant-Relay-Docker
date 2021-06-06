@@ -5,6 +5,12 @@
 ![Supports i386 Architecture][i386-shield]
 ![Maintained][maintained-shield]
 
+# No longer maintained
+
+Assistant Relay is no longer maintained, due to lack of time for the project of the creator of Assistant Relay. Also he has no personal need for Assistant Relay anuymore. Therefor I have decided to stop maintaining the Docker image (and Hassio add-on) as well. The image will no longer be updated. That also means that the OS of the image will not be updated as well, including security updates.
+
+
+
 # Assistant Relay Docker
 Assistant Relay in Docker. See https://github.com/greghesp/assistant-relay to see how it works and for the release notes.
 
@@ -86,4 +92,4 @@ The commands described on the add-on page will also work if you are not using th
 [armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
 [i386-shield]: https://img.shields.io/badge/i386-no-red.svg
-[maintained-shield]: https://img.shields.io/badge/maintained-yes-green.svg
+[maintained-shield]: https://img.shields.io/badge/maintained-no-red.svg
